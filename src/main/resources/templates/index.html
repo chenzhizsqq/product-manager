@@ -23,15 +23,19 @@
         </tr>
         </thead>
         <tbody>
+        <!--<tr th:each="product : ${listProducts}">表示 foreach product in listProducts -->
         <tr th:each="product : ${listProducts}">
+            <!--下面的 product 表示：foreach product in listProducts 中的product对象-->
             <td th:text="${product.id}">Product ID</td>
             <td th:text="${product.name}">Name</td>
             <td th:text="${product.brand}">Brand</td>
             <td th:text="${product.madein}">Made in</td>
             <td th:text="${product.price}">Price</td>
             <td>
+                <!-- 对应接口  @RequestMapping("/edit/{id}")-->
                 <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
                 &nbsp;&nbsp;&nbsp;
+                <!-- 对应接口  @RequestMapping("/delete/{id}")-->
                 <a th:href="@{'/delete/' + ${product.id}}">Delete</a>
             </td>
         </tr>

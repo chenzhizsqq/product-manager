@@ -9,9 +9,11 @@
 <div align="center">
     <h1>Edit Product</h1>
     <br />
+    <!-- 从@RequestMapping(value = "/save" 接口中，获取"product"object对象-->
     <form action="#" th:action="@{/save}" th:object="${product}"
           method="post">
 
+        <!-- 下面的因为用th:field ，所以用上object对象时，表示方式是th:field="*{name}" ，前面加上* -->
         <table border="0" cellpadding="10">
             <tr>
                 <td>Product ID:</td>
